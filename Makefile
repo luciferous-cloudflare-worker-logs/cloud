@@ -26,7 +26,7 @@ describe:
 		--path "/Outputs/" \
 		--recursive \
 		--query "Parameters[].{Name:Name,Value:Value}" \
-		--output table
+		--output json
 
 .PHONY: \
 	format \
