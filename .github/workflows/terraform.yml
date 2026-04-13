@@ -11,6 +11,10 @@ on:
     branches:
       - master
 
+env:
+  TF_VAR_SYSTEM_NAME: cloudflare-worker-logs
+  TF_VAR_REGION: ${{ vars.AWS_REGION }}
+
 jobs:
   terraform:
     runs-on: ubuntu-22.04
