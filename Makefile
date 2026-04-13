@@ -21,9 +21,17 @@ fmt-terraform-common:
 	terraform fmt
 
 
+describe:
+	aws ssm get-parameters-by-path \
+		--path "/Outputs/" \
+		--recursive \
+		--query "Parameters[].{Name:Name,Value:Value}" \
+		--output table
+
 .PHONY: \
 	format \
 	fmt-terraform \
 	fmt-terraform-root \
-	fmt-terraform-common
+	fmt-terraform-common \
+	describe
 
